@@ -159,7 +159,7 @@ X_test.columns = colNames
 
 if do_over_all_var_importance == 1:
    imp,imp_pos = models_and_methods.over_all_var_importance(predict_binary,ylabel_text,save_fig,results_path,X_train,y_train,plot_importance_ranks)
-   imp_cols_data = TDData.loc[ : , imp_pos.index] #.reindex(columns=imp_pos.index)
+   imp_cols_data = TDData.loc[:, imp_pos.index] #.reindex(columns=imp_pos.index)
    imp_data = pd.DataFrame(pd.concat([imp_cols_data,pd.DataFrame(y_train)],axis=1))
    imp_data.columns.values[-1] = 'memory_response_strength'
    target_continuous = pd.DataFrame(TDData.iloc[:,-1])
